@@ -63,5 +63,7 @@ dependencies {
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+Step.01-Exercise-Creating-and-Adding-a-Fragment
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 }
