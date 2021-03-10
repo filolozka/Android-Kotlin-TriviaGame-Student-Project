@@ -33,7 +33,7 @@ import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 import android.content.pm.ResolveInfo
 import android.content.pm.PackageManager
-
+import com.example.android.navigation.GameWonFragmentArgs.fromBundle
 
 
 class GameWonFragment : Fragment() {
@@ -46,7 +46,15 @@ class GameWonFragment : Fragment() {
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
+        var args = GameWonFragmentArgs.fromBundle(requireArguments())
+        Toast.makeText(context,
+                "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}",
+                Toast.LENGTH_LONG).show()
+        binding.nextMatchButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
+        }
         setHasOptionsMenu(true)
+        // This allows onCreateOptionsMenu to be called
         return binding.root
     }
 
@@ -58,7 +66,7 @@ class GameWonFragment : Fragment() {
                 .intent
     }
 
-    private fun shareSuccess() {
+    private fun shareSuccess(){
         startActivity(getShareIntent())
     }
 
