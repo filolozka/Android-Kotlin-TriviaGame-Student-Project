@@ -46,11 +46,15 @@
         android:name="com.example.android.navigation.GameOverFragment"
         android:label="@string/android_trivia"
         tools:layout="@layout/fragment_game_over">
-        <!-- TODO (03) Add an action connecting the gameOverFragment to the gameFragment
-             Select PopTo TitleFragment in the editor with inclusive turned off -->
+       
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
             app:destination="@id/gameFragment"
             app:popUpTo="@id/titleFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.android.navigation.AboutFragment"
+        android:label="title_about_trivia_string"
+        tools:layout="@layout/fragment_about" />
 </navigation>
